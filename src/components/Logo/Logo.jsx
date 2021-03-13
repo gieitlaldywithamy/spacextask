@@ -7,9 +7,7 @@ const Logo = () => {
   return (
     <LogoContainer>
         <img src={logo} alt="spacex logo" />
-      <TextContainer>
-        <span>LAUNCHES</span>
-      </TextContainer>
+      <TextContainer>LAUNCHES</TextContainer>
     </LogoContainer>
   );
 };

@@ -7,22 +7,32 @@ import { SPACEX_API_LAUNCHES_KEY } from './constants/apiConstants';
 import refreshSmall from './assets/icon/refresh.png';
 import refreshMedium from './assets/icon/refresh.png';
 import refreshLarge from './assets/icon/refresh.png';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './theme/theme';
 
 const queryClient = new QueryClient();
 
 function App() {
     return (
         <QueryClientProvider client={queryClient}>
-            <AppContainer>
-                <Header>
-                    <Logo />
-                    <Button onClick={() => queryClient.invalidateQueries(SPACEX_API_LAUNCHES_KEY)} text='Refresh' iconRightSrcSet={`${refreshSmall} 300w, ${refreshMedium} 768w, ${refreshLarge} 1280w`}/>
-                </Header>
-                <MainContainer>
-                    <SplashImage />
-                    <LaunchesListWithControls />
-                </MainContainer>
-            </AppContainer>
+            <ThemeProvider theme={theme}>
+                <AppContainer>
+                    <Header>
+                        <Logo />
+                        <Button 
+                            onClick={() => queryClient.invalidateQueries(SPACEX_API_LAUNCHES_KEY)}
+                            text='Reload Data'
+                            alt='Reload Icon'
+                            src={refreshSmall}
+                            curved
+                        />
+                    </Header>
+                    <MainContainer>
+                        <SplashImage />
+                        <LaunchesListWithControls />
+                    </MainContainer>
+                </AppContainer>
+            </ThemeProvider>
         </QueryClientProvider>
   );
 }
