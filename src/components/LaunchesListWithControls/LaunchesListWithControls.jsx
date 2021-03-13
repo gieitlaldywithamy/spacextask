@@ -12,7 +12,7 @@ const LaunchesListWithControls = () => {
         <ListWithControls>
             <Controls>
                 <YearFilter/>
-                <Button/>
+                <Button text='Sort'/>
             </Controls>
             <LaunchList launches={launches}/>
         </ListWithControls>
