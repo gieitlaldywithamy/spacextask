@@ -5,7 +5,7 @@ export const StyledButton = styled.button`
     font-weight: ${props => props.theme.bold};
     color: #fff;
     border-style: none;
-    width: 10em;
+    width: 12em;
     height: 3em;
     border-style: none;
     border-radius: ${props => props.curved ? '2vw 0 0 2vw' : '0'};

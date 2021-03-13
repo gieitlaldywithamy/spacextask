@@ -4,11 +4,8 @@ import { LaunchListItem } from '../index';
 import { List } from './LaunchList.styled';
 
 const LaunchList = ({ launches, sortDescending, yearFilter }) => {
-
-    console.log(yearFilter);
-    console.log(sortDescending);
     launches = launches.filter((launch) => {
-        return !yearFilter ? true : launch.launch_year === yearFilter;
+        return yearFilter < 1 ? true : launch.launch_year === yearFilter;
     }).sort((launch, launchNext) => {
         const launchTime = launch.launch_date_unix;
         const launchTimeNext = launchNext.launch_date_unix;

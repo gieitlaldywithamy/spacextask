@@ -1,12 +1,9 @@
 import React from 'react';
-import { AppContainer, MainContainer } from './App.styled';
-import { Header } from './containers/index';
+import { AppContainer, HeaderContainer, MainContainer } from './App.styled';
 import { Logo, Button, SplashImage, LaunchesListWithControls } from './components';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { SPACEX_API_LAUNCHES_KEY } from './constants/apiConstants';
-import refreshSmall from './assets/icon/refresh.png';
-import refreshMedium from './assets/icon/refresh.png';
-import refreshLarge from './assets/icon/refresh.png';
+import refresh from './assets/icon/refresh.png';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './theme/theme';
 
@@ -17,16 +14,16 @@ function App() {
         <QueryClientProvider client={queryClient}>
             <ThemeProvider theme={theme}>
                 <AppContainer>
-                    <Header>
+                    <HeaderContainer>
                         <Logo />
                         <Button 
                             onClick={() => queryClient.invalidateQueries(SPACEX_API_LAUNCHES_KEY)}
                             text='Reload Data'
                             alt='Reload Icon'
-                            src={refreshSmall}
+                            src={refresh}
                             curved
                         />
-                    </Header>
+                    </HeaderContainer>
                     <MainContainer>
                         <SplashImage />
                         <LaunchesListWithControls />

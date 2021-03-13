@@ -1,17 +1,33 @@
 import React from 'react';
 import useFetchLaunches from '../../hooks/useFetchLaunches';
-import Dropdown from 'react-dropdown';
+import { YearSelector } from './YearFilter.styled';
 
-const YearFilter = ({ setYear }) => {
-    const { isLoading, error, data } = useFetchLaunches();
+const YearFilter = ({ selectedYear, setYear }) => {
+    const { isLoading, data } = useFetchLaunches();
     const onChange = (newSelection) => {
-        setYear(newSelection.value);
-    }
-    if (isLoading) return '...Loading'; //TBF Loading component
-    if (error) return 'An error has occurred: ' + error.message; //TBF Error component
-    const years = [...new Set(data.map(launch => launch.launch_year))];
+        if (newSelection.target.value === 0) {
+            setYear(false);
+            return;
+        }
+        setYear(newSelection.target.value);
+    };
+
+    const createYears = (data) => {
+        return [...new Set(data.map(launch => launch.launch_year))];
+    };
+
+    console.log(selectedYear)
     return (
-        <Dropdown options={years} onChange={onChange} value={'Year Filter'}></Dropdown>
+        <YearSelector
+            onChange={onChange}
+            value={selectedYear ? selectedYear : 0 }
+        >
+        <option value={0}>Filter By Year</option>
+        {!isLoading && createYears(data).map((year) => (
+            <option key={year} value={year}>{year}</option>
+        ))}
+        </YearSelector>
+        // <Dropdown options={years} onChange={onChange} value={'Year Filter'}></Dropdown>
     );
 };
 

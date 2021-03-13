@@ -7,6 +7,12 @@ export const AppContainer = styled.div`
     padding-right: 0;
 `;
 
+export const HeaderContainer = styled.header`
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+`;
+
 export const MainContainer = styled.div`
     display: flex;
 `;
