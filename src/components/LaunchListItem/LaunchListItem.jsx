@@ -20,7 +20,7 @@ const ListItem = ({ flightNumber, missionName, launchDate, rocketName }) => {
 ListItem.propTypes = {
     flightNumber: PropTypes.number.isRequired,
     missionName: PropTypes.string.isRequired,
-    launchDate: PropTypes.number,
+    launchDate: PropTypes.string,
     rocketName: PropTypes.string.isRequired,
 };
 
