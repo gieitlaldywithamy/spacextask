@@ -7,7 +7,7 @@ import sortIcon from '../../assets/icon/sort.png';
 const LaunchesListWithControls = () => {
     const { isLoading, error, data } = useFetchLaunches();
 
-    const [descending, setDescending] = useState(true);
+    const [descending, setDescending] = useState(false);
     const [selectedYear, setSelectedYear] = useState(null);
 
     return (
@@ -18,7 +18,7 @@ const LaunchesListWithControls = () => {
                     selectedYear={selectedYear}
                 />
                 <Button
-                    text='Sort Descending'
+                    text={descending ? 'Sort Ascending': 'Sort Descending'}
                     src={sortIcon}
                     alt='sort button'
                     onClick={() => setDescending(!descending)}

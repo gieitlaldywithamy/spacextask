@@ -4,6 +4,7 @@ import { YearSelector } from './YearFilter.styled';
 
 const YearFilter = ({ selectedYear, setYear }) => {
     const { isLoading, data } = useFetchLaunches();
+
     const onChange = (newSelection) => {
         if (newSelection.target.value === 0) {
             setYear(false);
@@ -16,7 +17,6 @@ const YearFilter = ({ selectedYear, setYear }) => {
         return [...new Set(data.map(launch => launch.launch_year))];
     };
 
-    console.log(selectedYear)
     return (
         <YearSelector
             onChange={onChange}
@@ -27,7 +27,6 @@ const YearFilter = ({ selectedYear, setYear }) => {
             <option key={year} value={year}>{year}</option>
         ))}
         </YearSelector>
-        // <Dropdown options={years} onChange={onChange} value={'Year Filter'}></Dropdown>
     );
 };
 
