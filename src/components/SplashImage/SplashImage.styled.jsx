@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SplashContainer = styled.div`
+export const SplashContainer = styled.aside`
     width: 40%;
     @media only screen and (max-width: 1350px) {
         display: none;

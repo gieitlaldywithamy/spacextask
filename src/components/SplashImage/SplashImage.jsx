@@ -8,7 +8,7 @@ const SplashImage = () => (
     <SplashContainer>
         <img src={LaunchImageSmall} 
             srcset={`${LaunchImageSmall} 768px, ${LaunchImageMedium} 1024px, ${LaunchImageLarge} 1440px`}
-            alt="spacex-launch" />
+            alt="" />
     </SplashContainer>
 );
 

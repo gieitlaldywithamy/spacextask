@@ -16,7 +16,7 @@ export const HeaderContainer = styled.header`
     padding-top: 3vh;
 `;
 
-export const MainContainer = styled.div`
+export const MainContainer = styled.main`
     display: flex;
     padding-left: 5vw;
     padding-right: 3vw;

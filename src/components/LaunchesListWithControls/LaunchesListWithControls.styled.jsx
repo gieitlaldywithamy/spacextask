@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ListWithControls = styled.div`
+export const ListWithControls = styled.section`
     width: 60%;
     display: flex;
     flex-direction: column;

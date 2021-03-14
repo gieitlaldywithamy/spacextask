@@ -6,7 +6,7 @@ import { LogoContainer, TextContainer } from './Logo.styled';
 const Logo = () => {
   return (
     <LogoContainer>
-        <img src={logo} alt="spacex logo" />
+        <img src={logo} alt="" />
       <TextContainer>LAUNCHES</TextContainer>
     </LogoContainer>
   );
