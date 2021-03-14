@@ -28,7 +28,7 @@ function App() {
                         </HeaderContainer>
                         <MainContainer>
                             <SplashImage />
-                            <LaunchesListWithControls />
+                            <LaunchesListWithControls theme={theme}/>
                         </MainContainer>
                     </AppContainer>
                 </DocumentTitle>

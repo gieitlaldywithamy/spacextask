@@ -8,5 +8,6 @@ export const SplashContainer = styled.aside`
     padding-top: 5%;
     & > img {
         width: auto;
+        max-height: 90%;
     }
 `;

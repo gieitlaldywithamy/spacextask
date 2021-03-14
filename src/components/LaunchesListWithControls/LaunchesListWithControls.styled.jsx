@@ -9,6 +9,13 @@ export const ListWithControls = styled.section`
     }
 `;
 
+export const LaunchListPlaceholder = styled.div`
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
 export const Controls = styled.div`
     display: flex;
     justify-content: flex-end;
