@@ -6,10 +6,9 @@ import { SplashContainer } from './SplashImage.styled';
 
 const SplashImage = () => (
     <SplashContainer>
-        <source media="(min-width:768px)" srcSet={LaunchImageSmall} />
-        <source media="(min-width:1024px)" srcSet={LaunchImageMedium} />
-        <source media="(min-width:1440px)" srcSet={LaunchImageLarge} />
-        <img src={LaunchImageSmall} alt="spacex-launch" />
+        <img src={LaunchImageSmall} 
+            srcset={`${LaunchImageSmall} 768px, ${LaunchImageMedium} 1024px, ${LaunchImageLarge} 1440px`}
+            alt="spacex-launch" />
     </SplashContainer>
 );
 

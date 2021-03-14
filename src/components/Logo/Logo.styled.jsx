@@ -11,5 +11,5 @@ export const TextContainer = styled.span`
     margin-left: -5%;
     font-weight: ${props => props.theme.lightWeight};
     font-size: 1.2em;
-    font-family: 'Helvetica';
+    font-family: 'Brandon Grotesque Regular';
 `;

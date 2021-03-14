@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+    font-family: 'Brandon Grotesque';
+    src: local('Brandon Grotesque'), url(./assets/font/BrandonGrotesque-Medium.woff) format('truetype');
+}
+
+@font-face {
+    font-family: 'Brandon Grotesque Regular';
+    src: local('Brandon Grotesque'), url(./assets/font/BrandonGrotesque-Regular.woff) format('truetype');
+}
+
+@font-face {
+    font-family: 'Brandon Grotesque Bold';
+    src: local('Brandon Grotesque'), url(./assets/font/BrandonGrotesque-Bold.woff) format('truetype');
+}
