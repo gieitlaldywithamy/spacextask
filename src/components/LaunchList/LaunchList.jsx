@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { LaunchListItem } from '../index';
 import { List } from './LaunchList.styled';
 
-const LaunchList = ({ launches, sortDescending, yearFilter }) => {
+const LaunchList = ({ launches, sortDescending, yearToFilterBy }) => {
     launches = launches.filter((launch) => {
-        return yearFilter < 1 ? true : launch.launch_year === yearFilter;
+        return yearToFilterBy < 1 ? true : launch.launch_year === yearToFilterBy;
     }).sort((launch, launchNext) => {
         const launchTime = launch.launch_date_unix;
         const launchTimeNext = launchNext.launch_date_unix;
@@ -39,6 +39,8 @@ LaunchList.propTypes = {
             })
         })
     ).isRequired,
+    sortDescending: PropTypes.bool.isRequired,
+    yearToFilterBy: PropTypes.string.isRequired,
 };
 
 export default LaunchList;

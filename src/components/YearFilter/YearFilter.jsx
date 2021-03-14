@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import useFetchLaunches from '../../hooks/useFetchLaunches';
 import { YearSelector } from './YearFilter.styled';
 
@@ -20,14 +21,23 @@ const YearFilter = ({ selectedYear, setYear }) => {
     return (
         <YearSelector
             onChange={onChange}
-            value={selectedYear ? selectedYear : 0 }
+            value={selectedYear ? selectedYear : '0'}
         >
-        <option value={0}>Filter By Year</option>
+        <option value={'0'}>Filter By Year</option>
         {!isLoading && createYears(data).map((year) => (
             <option key={year} value={year}>{year}</option>
         ))}
         </YearSelector>
     );
+};
+
+YearFilter.defaultProps = {
+    selectedYear: '0',
+}
+
+YearFilter.propTypes = {
+    selectedYear: PropTypes.string,
+    setYear: PropTypes.func.isRequired,
 };
 
 export default YearFilter;

@@ -10,7 +10,7 @@ const LaunchesListWithControls = ({ theme }) => {
     const { isLoading, error, data } = useFetchLaunches();
 
     const [descending, setDescending] = useState(false);
-    const [selectedYear, setSelectedYear] = useState(null);
+    const [selectedYear, setSelectedYear] = useState('0');
 
     return (
         <ListWithControls>
@@ -34,7 +34,7 @@ const LaunchesListWithControls = ({ theme }) => {
             ) : (
                 <LaunchList
                     launches={Array.from(data)}
-                    yearFilter={selectedYear}
+                    yearToFilterBy={selectedYear}
                     sortDescending={descending}
                 />
             ) }
@@ -46,6 +46,6 @@ LaunchesListWithControls.propTypes = {
     theme: PropTypes.shape({
         blueColor: PropTypes.string.isRequired,
     }).isRequired,
-}
+};
 
 export default LaunchesListWithControls;
