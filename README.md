@@ -27,3 +27,13 @@ GitHub - [https://github.com/r-spacex/SpaceX-API](https://github.com/r-spacex/Sp
 - Accessibility (A11y) best practices.
 - Type Safety i.e propTypes or TypeScript
 - Unit Tests
+
+# How to run
+- npm install
+- npm start
+- npm test (for albeit limited tested)
+
+
+# Final Thoughts
+I'm not happy with the final project structure. My plan was to make the SplashImage and Button component to be completely reusable, however as they stand, they still have project specific logic in them. I do feel I rushed this but I've realised how difficult is to come up with a project structure and for me the most important question is could another dev come into this codebase and grasp what's going on? I think so. Do I think this is production ready? Absolutely not :)
+With more time, I would have properly researched Accessibility best practices, I made an attempt to follow a A11y checklist but I feel this was more lip service than treating it with due diligence. I would have also liked to finish tests off. Also, I would have liked to add in an animation to the reload button, currently it looks like it does nothing. React Query is triggering a fresh network query (as seen in the network tab of devtools), but you do not see any rerendering unless the new data fetched differs from the old data.
