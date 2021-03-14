@@ -21,11 +21,13 @@ const YearFilter = ({ selectedYear, setYear }) => {
     return (
         <YearSelector
             onChange={onChange}
+            id="yearFilterSelect"
+            data-testid="select"
             value={selectedYear ? selectedYear : '0'}
         >
-        <option value={'0'}>Filter By Year</option>
-        {!isLoading && createYears(data).map((year) => (
-            <option key={year} value={year}>{year}</option>
+        <option value={'0'} key={'0'}>Filter By Year</option>
+        {!isLoading && createYears(data).map((year, index) => (
+            <option key={index} value={year}>{year}</option>
         ))}
         </YearSelector>
     );

@@ -21,7 +21,7 @@ function App() {
                             <Button 
                                 onClick={() => queryClient.invalidateQueries(SPACEX_API_LAUNCHES_KEY)}
                                 text='Reload Data'
-                                alt='Reload Icon'
+                                altText='Reload Icon'
                                 src={refresh}
                                 curved
                             />

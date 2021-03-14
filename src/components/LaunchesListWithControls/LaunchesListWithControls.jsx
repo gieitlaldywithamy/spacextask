@@ -22,7 +22,7 @@ const LaunchesListWithControls = ({ theme }) => {
                 <Button
                     text={descending ? 'Sort Ascending': 'Sort Descending'}
                     src={sortIcon}
-                    alt='sort button'
+                    altText='sort button'
                     onClick={() => setDescending(!descending)}
                 />
             </Controls>
